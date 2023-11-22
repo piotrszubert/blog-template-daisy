@@ -2,19 +2,15 @@
 
 import { useTheme } from "next-themes"
 
-type Theme = string | null;
-
 export const ThemeToggle = () => {
     const { theme, setTheme } = useTheme()
-
-    // const [theme, setTheme] = useLocalStorage<Theme>("theme", null);
 
     const themes = [
         "default", "light", "dark", "cupcake", "bumblebee", "emerald", "corporate",
         "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest",
-        // "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula",
-        // "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter",
-        // "dim", "nord", "sunset"
+        "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula",
+        "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter",
+        "dim", "nord", "sunset"
     ];
 
     return(

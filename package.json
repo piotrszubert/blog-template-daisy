@@ -14,7 +14,6 @@
     }
   },
   "dependencies": {
-    "@uidotdev/usehooks": "^2.4.1",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "next": "14.0.3",
