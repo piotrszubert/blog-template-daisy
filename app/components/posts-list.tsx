@@ -4,7 +4,7 @@ import { allPosts, Post } from 'contentlayer/generated'
 
 function PostCard(post: Post) {
   return (
-    <div className="card bg-base-100 shadow-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative">
+    <div className="card bg-base-100 shadow-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
       <Link href={post.url} className="absolute inset-0"></Link>
       {/* <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
       <div className="card-body">
