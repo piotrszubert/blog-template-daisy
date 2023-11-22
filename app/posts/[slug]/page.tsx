@@ -2,6 +2,16 @@ import { allPosts } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import { notFound } from 'next/navigation'
 import { format, parseISO } from 'date-fns'
+import type { MDXComponents } from 'mdx/types'
+import Link from 'next/link'
+import Image from 'next/image'
+
+const mdxComponents: MDXComponents = {
+  // Override the default <a> element to use the next/link component.
+  a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
+  // Add a custom component.
+  Image: ({src, alt, width, height}) => <Image src={src} width={width} height={height} alt={alt}/>,
+}
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 
@@ -21,12 +31,12 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     return(
         <article className="mx-auto max-w-xl py-8">
                <div className="mb-8 text-center">
-                 <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
+                 <time dateTime={post.date} className="mb-1 text-secondary text-sm">
                   {format(parseISO(post.date), 'LLLL d, yyyy')}
                </time>
-                 <h1 className="text-3xl font-bold">{post.title}</h1>
+                 <h1 className="text-5xl font-bold mb-8">{post.title}</h1>
              </div>
-             <MDXContent />
+             <MDXContent components={mdxComponents} />
         </article>
     )
 }

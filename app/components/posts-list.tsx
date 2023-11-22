@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 
+
 function PostCard(post: Post) {
   return (
     <div className="card bg-base-100 shadow-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
@@ -11,11 +12,12 @@ function PostCard(post: Post) {
         <h2 className="card-title text-2xl">
             {post.title}
         </h2>
-        <time dateTime={post.date} className="text-primary text-xs">
+        <time dateTime={post.date} className="text-secondary text-xs">
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-
+        <p>
+          {post.intro}
+        </p>
       </div>
     </div>
   )
