@@ -3,7 +3,7 @@ import { PostList } from './components/posts-list'
 
 export default function Home() {
   return (
-    <main className="py-12">
+    <main className="py-12 min-h-screen">
       <div className='flex flex-col gap-6'>
         <div className="flex">
           <Link className="link link-primary font-bold ms-auto" href="/settings" title="Settings">
