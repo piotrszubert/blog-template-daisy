@@ -23,10 +23,10 @@ export const ThemeToggle = () => {
                     type="radio" 
                     name="theme-buttons" 
                     className="btn theme-controller join-item" 
-                    defaultChecked={ theme === themeOption } 
+                    checked={ theme === themeOption } 
                     // capitalize theme name
                     aria-label={themeOption.charAt(0).toUpperCase()+ themeOption.slice(1)}
-                    onClick={() => {
+                    onChange={() => {
                         setTheme(themeOption)
                     }}
                     value={themeOption} 
