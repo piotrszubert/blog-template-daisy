@@ -3,29 +3,34 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 
 function PostCard(post: Post) {
-    return (
-      <div className="mb-8">
-        <h2 className="mb-1 text-xl">
-          <Link href={post.url} className="link link-secondary">
+  return (
+    <div className="card bg-base-100 shadow-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative">
+      <Link href={post.url} className="absolute inset-0"></Link>
+      {/* <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
+      <div className="card-body">
+        <h2 className="card-title text-2xl">
             {post.title}
-          </Link>
         </h2>
         <time dateTime={post.date} className="text-primary text-xs">
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
-        {/* <div className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} /> */}
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+
       </div>
-    )
+    </div>
+  )
 }
 
 export const PostList = () => {
-    const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
-    return(
-        <div>
-            {posts.map((post, idx) => (
-            <PostCard key={idx} {...post} />
-            ))}
-        </div>
-    );
+  return (
+    <div className="flex flex-col gap-8">
+      {posts.map((post, idx) => (
+        <>
+        <PostCard key={idx} {...post} />
+        </>
+      ))}
+    </div>
+  );
 }
