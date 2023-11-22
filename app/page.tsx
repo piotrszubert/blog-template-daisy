@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { PostList } from './components/posts-list'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           </Link>
         </div>
         Blog
+        <PostList />
         <button className="btn btn-primary">Button</button>
       </div>
     </main>
