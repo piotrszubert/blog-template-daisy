@@ -1,11 +1,13 @@
 'use client'
 
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useTheme } from "next-themes"
 
 type Theme = string | null;
 
 export const ThemeToggle = () => {
-    const [theme, setTheme] = useLocalStorage<Theme>("theme", null);
+    const { theme, setTheme } = useTheme()
+
+    // const [theme, setTheme] = useLocalStorage<Theme>("theme", null);
 
     const themes = [
         "default", "light", "dark", "cupcake", "bumblebee", "emerald", "corporate",
