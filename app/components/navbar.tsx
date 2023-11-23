@@ -16,40 +16,43 @@ export const Navbar = () => {
 
   return (
     <div className="px-5 sticky top-3 z-50">
-    <div className="px-5 bg-transparent backdrop-blur-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
-      <div className="navbar">
-        <Link href="/" className="font-bold text-primary text-lg">
-          Yu
-        </Link>
-        <div className="ms-auto">
-          <button
-            onClick={() => {
-              toggleMenu()
-            }}
-            className="btn btn-square btn-ghost hover:text-primary"
-          >
-            {isOpen ? <X /> : <MoreHorizontal />}
-          </button>
+      <div className="px-5 bg-transparent backdrop-blur-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
+        <div className="navbar">
+          <Link href="/" className="font-bold text-primary text-lg">
+            Yu
+          </Link>
+          <div className="ms-auto">
+            <button
+              onClick={() => {
+                toggleMenu()
+              }}
+              className="btn btn-square btn-ghost hover:text-primary"
+            >
+              {isOpen ? <X /> : <MoreHorizontal />}
+            </button>
+          </div>
         </div>
+        {isOpen && (
+          <div className="pb-6 text-center font-semibold">
+            <nav>
+              <ul className="space-y-3">
+                {links.map((link, index) => (
+                  <li key={index} className="hover:underline">
+                    <Link
+                      onClick={() => {
+                        toggleMenu()
+                      }}
+                      href={link.path}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
-      {isOpen && (
-        <div className="pb-6 text-center font-semibold">
-          <nav>
-            <ul className="space-y-3">
-              {links.map((link, index) => (
-                <li key={index} className="hover:underline">
-                  <Link
-                   onClick={() => {
-                    toggleMenu()
-                  }}
-                  href={link.path}>{link.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
-    </div>
     </div>
   )
 }

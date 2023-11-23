@@ -9,13 +9,22 @@ export const Footer = () => {
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <a href="#" className="hover:-translate-y-1 transition-transform duration-200">
+          <a
+            href="#"
+            className="hover:-translate-y-1 transition-transform duration-200"
+          >
             <Mail />
           </a>
-          <a href="#" className="hover:-translate-y-1 transition-transform duration-200">
+          <a
+            href="#"
+            className="hover:-translate-y-1 transition-transform duration-200"
+          >
             <Twitter />
           </a>
-          <a href="#" className="hover:-translate-y-1 transition-transform duration-200">
+          <a
+            href="#"
+            className="hover:-translate-y-1 transition-transform duration-200"
+          >
             <Github />
           </a>
         </div>
