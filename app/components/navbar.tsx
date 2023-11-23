@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { ThemeToggle } from "./theme-toggle"
 import { MoreHorizontal, X } from "lucide-react"
 
 const links = [
@@ -16,13 +15,13 @@ export const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <div className="px-5 bg-transparent backdrop-blur-md border-2 border-primary rounded-[var(--rounded-box)] my-3 sticky top-3 z-50">
+    <div className="px-5 sticky top-3 z-50">
+    <div className="px-5 bg-transparent backdrop-blur-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
       <div className="navbar">
-        <Link href="/" className="font-semibold text-primary text-lg">
+        <Link href="/" className="font-bold text-primary text-lg">
           Yu
         </Link>
         <div className="ms-auto">
-          {/* <ThemeToggle /> */}
           <button
             onClick={() => {
               toggleMenu()
@@ -31,9 +30,6 @@ export const Navbar = () => {
           >
             {isOpen ? <X /> : <MoreHorizontal />}
           </button>
-          {/* <Link className="btn btn-square btn-ghost" href="/themes" title="Themes">
-                    <Palette />
-                </Link> */}
         </div>
       </div>
       {isOpen && (
@@ -53,6 +49,7 @@ export const Navbar = () => {
           </nav>
         </div>
       )}
+    </div>
     </div>
   )
 }
