@@ -6,7 +6,7 @@ export const ThemesPreview = () => {
   const { theme, setTheme } = useTheme()
 
   const themes = [
-    "default",
+    // "default",y
     "light",
     "dark",
     "cupcake",
@@ -42,31 +42,36 @@ export const ThemesPreview = () => {
   ]
 
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="grid grid-cols-3 gap-4">
       {themes.map((themeOption) => (
-        <input
-          key={themeOption}
-          type="radio"
-          name="theme-buttons"
-          className="btn"
-          checked={theme === themeOption}
-          // capitalize theme name
-          aria-label={
-            themeOption.charAt(0).toUpperCase() + themeOption.slice(1)
-          }
-          onChange={() => {
-            setTheme(themeOption)
-          }}
-          value={themeOption}
-        />
+        <div 
+          data-theme={themeOption}
+          className="p-6 border-2 border-primary space-y-3 rounded-[var(--rounded-box)]" >
+            <div className="capitalize text-sm">{themeOption}</div>
+          <input
+            key={themeOption}
+            type="radio"
+            name="theme-buttons"
+            className="btn btn-primary btn-sm"
+            checked={theme === themeOption}
+            // capitalize theme name
+            aria-label={
+              themeOption.charAt(0).toUpperCase() + themeOption.slice(1)
+            }
+            onChange={() => {
+              setTheme(themeOption)
+            }}
+            value={themeOption}
+          />
+        </div>
       ))}
-      <div className="bg-base-200 mt-8 p-8 w-full rounded-[var(--rounded-box)]">
+      {/* <div className="bg-base-200 mt-8 p-8 w-full rounded-[var(--rounded-box)]">
         <div className="flex flex-wrap gap-3">
           <button className="btn btn-primary">Primary button</button>
           <button className="btn btn-secondary">Secondary button</button>
           <button className="btn btn-accent">Accent button</button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
