@@ -2,7 +2,7 @@ import { Github, Mail, Twitter } from "lucide-react"
 
 export const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-[var(--rounded-box)] my-3">
+    <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-[var(--rounded-box)] my-3 shadow-xl">
       <aside>
         <p className="font-bold">Yu</p>
         <p className="text-xs">Copyright © 2023 - All right reserved</p>

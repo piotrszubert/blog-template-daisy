@@ -16,7 +16,7 @@ export const Navbar = () => {
 
   return (
     <div className="px-5 sticky top-3 z-50">
-      <div className="px-5 bg-transparent backdrop-blur-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
+      <div className="px-5 bg-transparent backdrop-blur-md shadow-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
         <div className="navbar">
           <Link href="/" className="font-bold text-primary text-lg">
             Yu
