@@ -42,7 +42,11 @@ export const Navbar = () => {
             <ul className="space-y-3">
               {links.map((link, index) => (
                 <li key={index} className="hover:underline">
-                  <Link href={link.path}>{link.title}</Link>
+                  <Link
+                   onClick={() => {
+                    toggleMenu()
+                  }}
+                  href={link.path}>{link.title}</Link>
                 </li>
               ))}
             </ul>
