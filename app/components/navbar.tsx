@@ -7,7 +7,7 @@ import { MoreHorizontal, X } from "lucide-react"
 const links = [
   { title: "Themes", path: "/themes" },
   { title: "FAQ", path: "/faq" },
-  { title: "Docs", path: "/docs" },
+  // { title: "Docs", path: "/docs" },
 ]
 
 export const Navbar = () => {
