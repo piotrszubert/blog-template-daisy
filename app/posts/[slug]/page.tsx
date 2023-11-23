@@ -32,7 +32,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <article className="py-8 prose">
+    <article className="py-8 prose prose-lg prose-img:rounded-[var(--rounded-box)]">
       <div className="mb-8 text-center">
         <time dateTime={post.date} className="mb-1 text-secondary text-sm">
           {format(parseISO(post.date), "LLLL d, yyyy")}
