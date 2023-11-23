@@ -1,7 +1,6 @@
-import Link from 'next/link'
-import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'contentlayer/generated'
-
+import Link from "next/link"
+import { compareDesc, format, parseISO } from "date-fns"
+import { allPosts, Post } from "contentlayer/generated"
 
 function PostCard(post: Post) {
   return (
@@ -9,32 +8,28 @@ function PostCard(post: Post) {
       <Link href={post.url} className="absolute inset-0"></Link>
       {/* <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
       <div className="card-body">
-        <h2 className="card-title text-2xl">
-            {post.title}
-        </h2>
+        <h2 className="card-title text-2xl">{post.title}</h2>
         <time dateTime={post.date} className="text-secondary text-xs">
-          {format(parseISO(post.date), 'LLLL d, yyyy')}
+          {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
-        {post.description && (
-          <div>
-            {post.description}
-          </div>
-        )}
+        {post.description && <div>{post.description}</div>}
       </div>
     </div>
   )
 }
 
 export const PostList = () => {
-  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  const posts = allPosts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  )
 
   return (
     <div className="flex flex-col gap-8">
       {posts.map((post, idx) => (
         <>
-        <PostCard key={idx} {...post} />
+          <PostCard key={idx} {...post} />
         </>
       ))}
     </div>
-  );
+  )
 }
