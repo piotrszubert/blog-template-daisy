@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <div className="max-w-2xl mx-auto px-4">
+        <div className="mx-auto max-w-2xl px-4">
           <ThemeProvider
             attribute="data-theme"
             defaultTheme="system"

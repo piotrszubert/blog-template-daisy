@@ -2,7 +2,7 @@ import { Github, Mail, Twitter } from "lucide-react"
 
 export const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-primary text-primary-content rounded-[var(--rounded-box)] my-3 shadow-xl">
+    <footer className="footer footer-center my-3 rounded-[var(--rounded-box)] bg-primary p-10 text-primary-content shadow-xl">
       <aside>
         <p className="font-bold">Yu</p>
         <p className="text-xs">Copyright © 2023 - All right reserved</p>
@@ -11,19 +11,19 @@ export const Footer = () => {
         <div className="grid grid-flow-col gap-4">
           <a
             href="#"
-            className="hover:-translate-y-1 transition-transform duration-200"
+            className="transition-transform duration-200 hover:-translate-y-1"
           >
             <Mail />
           </a>
           <a
             href="#"
-            className="hover:-translate-y-1 transition-transform duration-200"
+            className="transition-transform duration-200 hover:-translate-y-1"
           >
             <Twitter />
           </a>
           <a
             href="#"
-            className="hover:-translate-y-1 transition-transform duration-200"
+            className="transition-transform duration-200 hover:-translate-y-1"
           >
             <Github />
           </a>

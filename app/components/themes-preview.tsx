@@ -44,10 +44,11 @@ export const ThemesPreview = () => {
   return (
     <div className="grid grid-cols-3 gap-4">
       {themes.map((themeOption) => (
-        <div 
+        <div
           data-theme={themeOption}
-          className="p-6 border-2 border-primary space-y-3 rounded-[var(--rounded-box)]" >
-            <div className="capitalize text-sm">{themeOption}</div>
+          className="space-y-3 rounded-[var(--rounded-box)] border-2 border-primary p-6"
+        >
+          <div className="text-sm capitalize">{themeOption}</div>
           <input
             key={themeOption}
             type="radio"

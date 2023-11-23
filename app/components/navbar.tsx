@@ -16,10 +16,10 @@ export const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <div className="px-5 sticky top-3 z-50">
-      <div className="px-5 bg-transparent backdrop-blur-md shadow-md border-2 border-primary rounded-[var(--rounded-box)] my-3">
+    <div className="sticky top-3 z-50 px-5">
+      <div className="my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 shadow-md backdrop-blur-md">
         <div className="navbar">
-          <Link href="/" className="font-bold text-primary text-lg">
+          <Link href="/" className="text-lg font-bold text-primary">
             Yu
           </Link>
           <div className="ms-auto">
