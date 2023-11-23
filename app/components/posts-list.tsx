@@ -15,6 +15,11 @@ function PostCard(post: Post) {
         <time dateTime={post.date} className="text-secondary text-xs">
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
+        {post.description && (
+          <div>
+            {post.description}
+          </div>
+        )}
       </div>
     </div>
   )
