@@ -5,8 +5,9 @@ import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
 
 const links = [
+  { title: "Home", path: "/" },
   { title: "Themes", path: "/themes" },
-  { title: "FAQ", path: "/faq" },
+  // { title: "FAQ", path: "/faq" },
   // { title: "Docs", path: "/docs" },
 ]
 
