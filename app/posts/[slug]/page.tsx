@@ -40,6 +40,16 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <h1 className="text-5xl font-bold mb-8">{post.title}</h1>
       </div>
       <MDXContent components={mdxComponents} />
+      <div className="divider my-8"></div>
+      <div
+        className="text-center"
+      >
+        <Link
+          href="/"
+        >
+          See all posts
+        </Link>
+      </div>
     </article>
   )
 }
