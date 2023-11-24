@@ -14,8 +14,6 @@ const links = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => setIsOpen(!isOpen)
-
   const [isScrolled, setisScrolled] = useState(false)
 
   useEffect(() => {
@@ -44,7 +42,7 @@ export const Navbar = () => {
           <div className="ms-auto">
             <button
               onClick={() => {
-                toggleMenu()
+                setIsOpen(!isOpen)
               }}
               className="btn btn-square btn-ghost hover:text-primary"
             >
@@ -60,7 +58,7 @@ export const Navbar = () => {
                   <li key={index} className="hover:underline">
                     <Link
                       onClick={() => {
-                        toggleMenu()
+                        setIsOpen(!isOpen)
                       }}
                       href={link.path}
                     >
