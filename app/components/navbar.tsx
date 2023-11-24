@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
+import { useEffect } from "react"
 
 const links = [
   { title: "Home", path: "/" },
@@ -15,8 +16,26 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleMenu = () => setIsOpen(!isOpen)
 
+  const [isScrolled, setisScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldUpdateState = window.scrollY > 0
+      setisScrolled(shouldUpdateState)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
-    <div className="sticky top-3 z-50 px-5">
+    <div
+      className={`sticky top-3 z-50 transition-all duration-500 ${
+        isScrolled ? "px-8" : "px-0"
+      }`}
+    >
       <div className="my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 shadow-md backdrop-blur-md">
         <div className="navbar">
           <Link href="/" className="text-lg font-bold text-primary">

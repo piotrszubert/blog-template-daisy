@@ -11,19 +11,19 @@ export const Footer = () => {
         <div className="grid grid-flow-col gap-4">
           <a
             href="#"
-            className="transition-transform duration-200 hover:-translate-y-1 hover:scale-125 btn btn-ghost "
+            className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125 "
           >
             <Mail />
           </a>
           <a
             href="#"
-            className="transition-transform duration-200 hover:-translate-y-1 hover:scale-125 btn btn-ghost"
+            className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125"
           >
             <Twitter />
           </a>
           <a
             href="#"
-            className="transition-transform duration-200 hover:-translate-y-1 hover:scale-125 btn btn-ghost"
+            className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125"
           >
             <Github width="" />
           </a>
