@@ -1,9 +1,7 @@
 import type { Config } from "tailwindcss"
 import { siteConfig } from "./config/site"
 
-const theme = siteConfig.theme;
-
-console.log(theme);
+const theme = siteConfig.theme
 
 const config: Config = {
   content: [

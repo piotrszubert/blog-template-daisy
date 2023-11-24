@@ -1,4 +1,6 @@
+import { siteConfig } from "@/config/site"
 import { Github, Mail, Twitter } from "lucide-react"
+import Link from "next/link"
 
 export const Hero = () => {
   return (
@@ -11,15 +13,28 @@ export const Hero = () => {
         autem.
       </p>
       <div className="flex gap-3">
-        <button className="btn btn-square btn-ghost hover:text-primary">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={siteConfig.links.github}
+          className="btn btn-square btn-ghost hover:text-primary"
+        >
           <Github />
-        </button>
-        <button className="btn btn-square btn-ghost hover:text-primary">
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={siteConfig.links.twitter}
+          className="btn btn-square btn-ghost hover:text-primary"
+        >
           <Twitter />
-        </button>
-        <button className="btn btn-square btn-ghost hover:text-primary">
+        </a>
+        <a
+          href={`mailto:${siteConfig.links.mail}`}
+          className="btn btn-square btn-ghost hover:text-primary"
+        >
           <Mail />
-        </button>
+        </a>
       </div>
     </div>
   )
