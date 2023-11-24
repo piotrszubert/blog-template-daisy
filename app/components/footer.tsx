@@ -13,19 +13,19 @@ export const Footer = () => {
             href="#"
             className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125 "
           >
-            <Mail />
+            <Mail width="18" />
           </a>
           <a
             href="#"
             className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125"
           >
-            <Twitter />
+            <Twitter width="18" />
           </a>
           <a
             href="#"
             className="btn btn-ghost transition-transform duration-200 hover:-translate-y-1 hover:scale-125"
           >
-            <Github width="" />
+            <Github width="18" />
           </a>
         </div>
       </nav>
