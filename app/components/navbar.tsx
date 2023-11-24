@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
+import { useEffect } from "react"
 
 const links = [
   { title: "Home", path: "/" },
@@ -13,11 +14,30 @@ const links = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const [isScrolled, setisScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldUpdateState = window.scrollY > 0
+      setisScrolled(shouldUpdateState)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
-    <div className="sticky top-3 z-50 px-5">
-      <div className="my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 shadow-md backdrop-blur-md">
+    <div
+      className={`sticky top-3 z-50 transition-all duration-500 ${
+        isScrolled ? "px-8" : "px-0"
+      }`}
+    >
+      <div
+        className={`my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 backdrop-blur-md transition-all duration-500 
+        ${isScrolled ? "shadow-md" : "shadow-lg"}`}
+      >
         <div className="navbar">
           <Link href="/" className="text-lg font-bold text-primary">
             Yu
@@ -25,7 +45,7 @@ export const Navbar = () => {
           <div className="ms-auto">
             <button
               onClick={() => {
-                toggleMenu()
+                setIsOpen(!isOpen)
               }}
               className="btn btn-square btn-ghost hover:text-primary"
             >
@@ -41,7 +61,7 @@ export const Navbar = () => {
                   <li key={index} className="hover:underline">
                     <Link
                       onClick={() => {
-                        toggleMenu()
+                        setIsOpen(!isOpen)
                       }}
                       href={link.path}
                     >
