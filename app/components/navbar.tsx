@@ -34,7 +34,10 @@ export const Navbar = () => {
         isScrolled ? "px-8" : "px-0"
       }`}
     >
-      <div className="my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 shadow-md backdrop-blur-md">
+      <div
+        className={`my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 backdrop-blur-md transition-all duration-500 
+        ${isScrolled ? "shadow-md" : "shadow-lg"}`}
+      >
         <div className="navbar">
           <Link href="/" className="text-lg font-bold text-primary">
             Yu
