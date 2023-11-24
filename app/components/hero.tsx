@@ -2,7 +2,7 @@ import { Github, Mail, Twitter } from "lucide-react"
 
 export const Hero = () => {
   return (
-    <div className="py-8 space-y-6 mb-6">
+    <div className="mb-6 space-y-6 py-8">
       <h1 className="text-5xl font-bold tracking-tight">Yu - your own blog</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
@@ -11,13 +11,13 @@ export const Hero = () => {
         autem.
       </p>
       <div className="flex gap-3">
-        <button className="btn btn-ghost btn-square hover:text-primary">
+        <button className="btn btn-square btn-ghost hover:text-primary">
           <Github />
         </button>
-        <button className="btn btn-ghost btn-square hover:text-primary">
+        <button className="btn btn-square btn-ghost hover:text-primary">
           <Twitter />
         </button>
-        <button className="btn btn-ghost btn-square hover:text-primary">
+        <button className="btn btn-square btn-ghost hover:text-primary">
           <Mail />
         </button>
       </div>
