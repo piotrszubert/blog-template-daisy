@@ -3,6 +3,7 @@ import "./globals.css"
 import { ThemeProvider } from "./components/theme-provider"
 import { Footer } from "./components/footer"
 import { Navbar } from "./components/navbar"
+import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +21,7 @@ export default function RootLayout({
         <div className="mx-auto max-w-2xl px-4">
           <ThemeProvider
             attribute="data-theme"
-            defaultTheme="system"
+            defaultTheme={siteConfig.theme}
             enableSystem
             disableTransitionOnChange
           >
