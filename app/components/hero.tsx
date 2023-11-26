@@ -1,6 +1,5 @@
 import { siteConfig } from "@/config/site"
 import { Github, Mail, Twitter } from "lucide-react"
-import Link from "next/link"
 
 export const Hero = () => {
   return (
