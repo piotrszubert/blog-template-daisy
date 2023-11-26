@@ -45,7 +45,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         className="text-center"
       >
         <Link
-          href="/"
+          href="/posts"
           className="btn btn-primary btn-outline"
         >
           See all posts
