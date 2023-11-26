@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site"
 const links = [
   { title: "Home", path: "/" },
   { title: "Themes", path: "/themes" },
-  // { title: "FAQ", path: "/faq" },
+  { title: "All posts", path: "/posts" },
   // { title: "Docs", path: "/docs" },
 ]
 
