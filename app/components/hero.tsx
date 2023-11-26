@@ -28,7 +28,7 @@ export const Hero = ({
       <div className="flex flex-wrap items-center gap-6">
         {siteConfig.content.hero.displayAvatar && (
           <div className="avatar">
-            <div className="w-20 rounded-full">
+            <div className="w-20 rounded-[var(--rounded-box)]">
               <Image
                 src={siteConfig.content.hero.avatarPath}
                 alt={siteConfig.site.name}
