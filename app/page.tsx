@@ -9,7 +9,7 @@ export default function Home() {
     <main className="min-h-screen py-12">
       {display && <Hero heading={heading} subheading={subheading} />}
       <div className="flex flex-col gap-6">
-        <PostList />
+        <PostList limit={4} />
       </div>
     </main>
   )
