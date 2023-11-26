@@ -3,10 +3,10 @@ import { siteConfig } from "@/config/site"
 
 export const Footer = () => {
   return (
-    <footer className="footer footer-center my-3 rounded-[var(--rounded-box)] bg-primary p-10 text-primary-content shadow-xl">
+    <footer className="footer footer-center gap-y-6 my-3 rounded-[var(--rounded-box)] border-primary border-2 text-primary p-10 shadow-xl">
       <aside>
         <p className="text-lg font-bold">{siteConfig.site.name}</p>
-        <p className="text-xs">Copyright © 2023 - All right reserved</p>
+        <p className="text-xs text-secondary">Copyright © 2023 - All right reserved</p>
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
