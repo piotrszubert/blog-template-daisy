@@ -6,7 +6,7 @@ export const Footer = () => {
     <footer className="footer footer-center gap-y-6 my-3 rounded-[var(--rounded-box)] border-primary border-2 text-primary p-10 shadow-xl">
       <aside>
         <p className="text-lg font-bold">{siteConfig.site.name}</p>
-        <p className="text-xs text-secondary">Copyright © 2023 - All right reserved</p>
+        <p className="text-xs text-accent">Copyright © 2023 - All right reserved</p>
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
