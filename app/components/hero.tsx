@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/site"
 import { Github, Mail, Twitter } from "lucide-react"
+import Image from "next/image"
 
 type HeroProps = {
   heading?: string
@@ -24,7 +25,21 @@ export const Hero = ({
 
   return (
     <div className="mb-6 space-y-6 py-8">
-      <h1 className="text-5xl font-bold tracking-tight">{displayHeading}</h1>
+      <div className="flex flex-wrap items-center gap-6">
+        {siteConfig.content.hero.displayAvatar && (
+          <div className="avatar">
+            <div className="w-20 rounded-full">
+              <Image
+                src={siteConfig.content.hero.avatarPath}
+                alt={siteConfig.site.name}
+                width="80"
+                height="80"
+              />
+            </div>
+          </div>
+        )}
+        <h1 className="text-5xl font-bold tracking-tight">{displayHeading}</h1>
+      </div>
       <p>{displaySubheading}</p>
       <div className="flex gap-3">
         <a

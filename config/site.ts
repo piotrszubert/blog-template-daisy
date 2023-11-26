@@ -10,6 +10,8 @@ type SiteConfig = {
       display: boolean
       heading: string
       subheading: string
+      displayAvatar: boolean
+      avatarPath: string
     }
   }
   links: {
@@ -31,6 +33,8 @@ export const siteConfig: SiteConfig = {
   content: {
     hero: {
       display: true,
+      displayAvatar: true,
+      avatarPath: "/images/3.jpg",
       heading: "",
       subheading: "",
     },

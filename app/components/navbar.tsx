@@ -5,7 +5,7 @@ import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
 import { useEffect } from "react"
 import { siteConfig } from "@/config/site"
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation"
 
 const links = [
   { title: "Home", path: "/" },
@@ -64,7 +64,7 @@ export const Navbar = () => {
                 {links.map((link, index) => (
                   <li key={index} className="hover:underline">
                     <Link
-                      className={pathname === link.path ? 'text-primary' : ''}
+                      className={pathname === link.path ? "text-primary" : ""}
                       onClick={() => {
                         setIsOpen(!isOpen)
                       }}
