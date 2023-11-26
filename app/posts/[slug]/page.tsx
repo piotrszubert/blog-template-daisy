@@ -37,7 +37,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <time dateTime={post.date} className="mb-1 text-secondary text-sm">
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
-        <h1 className="text-5xl font-bold mb-8">{post.title}</h1>
+        <h1 className="text-5xl font-bold mb-12">{post.title}</h1>
       </div>
       <MDXContent components={mdxComponents} />
       <div className="divider my-8"></div>
