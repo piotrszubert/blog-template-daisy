@@ -4,11 +4,13 @@ import Link from "next/link"
 import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
 import { useEffect } from "react"
+import { siteConfig } from "@/config/site"
+import { usePathname } from "next/navigation"
 
 const links = [
   { title: "Home", path: "/" },
   { title: "Themes", path: "/themes" },
-  // { title: "FAQ", path: "/faq" },
+  { title: "All posts", path: "/posts" },
   // { title: "Docs", path: "/docs" },
 ]
 
@@ -28,6 +30,8 @@ export const Navbar = () => {
     }
   }, [])
 
+  const pathname = usePathname()
+
   return (
     <div
       className={`sticky top-3 z-50 transition-all duration-500 ${
@@ -40,7 +44,7 @@ export const Navbar = () => {
       >
         <div className="navbar">
           <Link href="/" className="text-lg font-bold text-primary">
-            Yu
+            {siteConfig.site.name}
           </Link>
           <div className="ms-auto">
             <button
@@ -60,6 +64,7 @@ export const Navbar = () => {
                 {links.map((link, index) => (
                   <li key={index} className="hover:underline">
                     <Link
+                      className={pathname === link.path ? "text-primary" : ""}
                       onClick={() => {
                         setIsOpen(!isOpen)
                       }}

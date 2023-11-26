@@ -18,17 +18,21 @@ function PostCard(post: Post) {
   )
 }
 
-export const PostList = () => {
+type PostListProps = {
+  limit?: number
+}
+
+export const PostList = ({ limit }: PostListProps) => {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   )
 
+  const postsToDisplay = limit ? posts.slice(0, limit) : posts
+
   return (
     <div className="flex flex-col gap-8">
-      {posts.map((post, idx) => (
-        <>
-          <PostCard key={idx} {...post} />
-        </>
+      {postsToDisplay.map((post, idx) => (
+        <PostCard key={idx} {...post} />
       ))}
     </div>
   )
