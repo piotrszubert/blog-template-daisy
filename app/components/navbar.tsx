@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { MoreHorizontal, X } from "lucide-react"
 import { useEffect } from "react"
+import { siteConfig } from "@/config/site"
 
 const links = [
   { title: "Home", path: "/" },
@@ -40,7 +41,7 @@ export const Navbar = () => {
       >
         <div className="navbar">
           <Link href="/" className="text-lg font-bold text-primary">
-            Yu
+            {siteConfig.site.name}
           </Link>
           <div className="ms-auto">
             <button

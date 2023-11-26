@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="footer footer-center my-3 rounded-[var(--rounded-box)] bg-primary p-10 text-primary-content shadow-xl">
       <aside>
-        <p className="font-bold">Yu</p>
+        <p className="font-bold text-lg">{siteConfig.site.name}</p>
         <p className="text-xs">Copyright © 2023 - All right reserved</p>
       </aside>
       <nav>
