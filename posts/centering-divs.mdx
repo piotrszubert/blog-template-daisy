@@ -1,7 +1,7 @@
 ---
 title: Centering Divs in CSS
 image: /images/blog/blog-post-4.jpg
-date: "2023-02-15"
+date: "2023-11-30"
 description: Learn different methods to center a div in CSS for better layout control.
 ---
 
@@ -54,6 +54,13 @@ This method is effective but may require additional consideration for responsive
 
 ## 4. Margin Auto
 
+<Alert
+    title="Note"
+>
+    The `margin: auto;` method is often used for horizontally centering elements within a fixed-width container. However, it only centers in the 
+    **horizontal direction; vertical centering is not achieved with this method**.
+</Alert>
+
 The `margin: auto;` trick is a simple and effective way to center a block-level element horizontally.
 
 ```css
@@ -66,7 +73,13 @@ This method is often used for horizontally centering elements within a fixed-wid
 
 ## 5. Margin Auto
 
-For inline or inline-block elements, you can use the text-align property on the parent container.
+<Alert
+    title="Note"
+>
+    For inline or inline-block elements, you can use the `text-align` property on the parent container.
+    Similar to `margin: auto;`, it operates in the **horizontal direction only**.
+</Alert>
+
 
 ```css
 .container {
