@@ -6,6 +6,7 @@ import type { MDXComponents } from "mdx/types"
 import Link from "next/link"
 import Image from "next/image"
 import { Info } from "lucide-react"
+import { siteConfig } from "@/config/site"
 
 const mdxComponents: MDXComponents = {
   // Override the default <a> element to use the next/link component.
@@ -36,7 +37,7 @@ export const generateStaticParams = async () =>
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
   if (!post) notFound()
-  return { title: post.title }
+return { title: `${siteConfig.site.name} - ${post.title}` }
 }
 
 export default function PostPage({ params }: { params: { slug: string } }) {
