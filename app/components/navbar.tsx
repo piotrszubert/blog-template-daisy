@@ -6,6 +6,7 @@ import { MoreHorizontal, X } from "lucide-react"
 import { useEffect } from "react"
 import { siteConfig } from "@/config/site"
 import { usePathname } from "next/navigation"
+import ScrollProgress from "./scrollProgres"
 
 const links = [
   { title: "Home", path: "/" },
@@ -78,7 +79,17 @@ export const Navbar = () => {
             </nav>
           </div>
         )}
+        {/* {isScrolled && <div className="transition-all duration-500 "><ScrollProgress /></div>} */}
       </div>
+      { siteConfig.content.progressBar.display && (
+        <div
+          className={`transition-all duration-500 ${
+            isScrolled ? "-mt-3 opacity-100" : "-mt-6 opacity-0"
+          }`}
+        >
+          <ScrollProgress />
+        </div>
+      )}
     </div>
   )
 }
