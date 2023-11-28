@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
     hero: {
       display: true,
       displayAvatar: true,
-      avatarPath: "/images/3.jpg",
+      avatarPath: "/images/avatar.jpg",
       heading: "",
       subheading: "",
     },
