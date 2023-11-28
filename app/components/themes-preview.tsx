@@ -45,6 +45,7 @@ export const ThemesPreview = () => {
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {themes.map((themeOption) => (
         <div
+          key={themeOption}
           data-theme={themeOption}
           className="space-y-3 rounded-[var(--rounded-box)] border-2 border-primary p-6"
         >

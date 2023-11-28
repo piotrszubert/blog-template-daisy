@@ -5,6 +5,7 @@ import { format, parseISO } from "date-fns"
 import type { MDXComponents } from "mdx/types"
 import Link from "next/link"
 import Image from "next/image"
+import { Info } from "lucide-react"
 
 const mdxComponents: MDXComponents = {
   // Override the default <a> element to use the next/link component.
@@ -13,6 +14,20 @@ const mdxComponents: MDXComponents = {
   Image: ({ src, alt, width, height }) => (
     <Image src={src} width={width} height={height} alt={alt} />
   ),
+
+  Alert: ({title, children}) => (
+    <div role="alert" className="alert border-2 shadow-lg border-info">
+      <div className="px-5">
+        <Info width={32} height={32} className="text-info" />
+      </div>
+      <div>
+        <h3 className="font-bold mt-0 -mb-2">{title}</h3>
+        <div className="text-sm">
+          {children}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export const generateStaticParams = async () =>
