@@ -1,8 +1,6 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
-import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
 export const Post = defineDocumentType(() => ({
@@ -37,7 +35,6 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      // rehypeSlug,
       [
         rehypePrettyCode,
         {
@@ -49,23 +46,18 @@ export default makeSource({
               node.children = [{ type: "text", value: " " }]
             }
           },
-          onVisitHighlightedLine(node: { properties: { className: string[] } }) {
+          onVisitHighlightedLine(node: {
+            properties: { className: string[] }
+          }) {
             node.properties.className.push("line--highlighted")
           },
-          onVisitHighlightedWord(node: { properties: { className: string[] } }) {
+          onVisitHighlightedWord(node: {
+            properties: { className: string[] }
+          }) {
             node.properties.className = ["word--highlighted"]
           },
         },
       ],
-      // [
-      //   rehypeAutolinkHeadings,
-      //   {
-      //     properties: {
-      //       className: ["subheading-anchor"],
-      //       ariaLabel: "Link to section",
-      //     },
-      //   },
-      // ],
     ],
   },
 })
