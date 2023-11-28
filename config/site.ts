@@ -6,6 +6,9 @@ type SiteConfig = {
     // ogImage: string
   }
   content: {
+    progressBar: {
+      display: boolean
+    }
     hero: {
       display: boolean
       heading: string
@@ -31,6 +34,9 @@ export const siteConfig: SiteConfig = {
     // ogImage: "https://",
   },
   content: {
+    progressBar: {
+      display: true,
+    },
     hero: {
       display: true,
       displayAvatar: true,
