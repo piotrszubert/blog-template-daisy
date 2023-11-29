@@ -39,6 +39,7 @@ export const Navbar = () => {
         isScrolled ? "px-8" : "px-0"
       }`}
     >
+      <div className="relative">
       <div
         className={`my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 backdrop-blur-md transition-all duration-500 
         ${isScrolled ? "shadow-md" : "shadow-lg"}`}
@@ -83,13 +84,14 @@ export const Navbar = () => {
       </div>
       { siteConfig.content.progressBar.display && (
         <div
-          className={`transition-all duration-500 ${
-            isScrolled ? "-mt-3 opacity-100" : "-mt-6 opacity-0"
+          className={`transition-all absolute bottom-3 w-full z-50 duration-500 ${
+            isScrolled ? "opacity-100 -bottom-6" : "-bottom-3 opacity-0"
           }`}
         >
           <ScrollProgress />
         </div>
       )}
+      </div>
     </div>
   )
 }
