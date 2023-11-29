@@ -4,6 +4,7 @@ import { ThemeProvider } from "./components/theme-provider"
 import { Footer } from "./components/footer"
 import { Navbar } from "./components/navbar"
 import { siteConfig } from "@/config/site"
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: siteConfig.site.name,
@@ -27,6 +28,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Analytics />
             <Footer />
           </ThemeProvider>
         </div>
