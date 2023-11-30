@@ -83,8 +83,8 @@ export const Navbar = () => {
         </div>
         {siteConfig.content.progressBar.display && (
           <div
-            className={`absolute bottom-3 z-50 w-full transition-all duration-500 ${
-              isScrolled ? "-bottom-8 px-8 opacity-100" : "-bottom-2 opacity-0"
+            className={`absolute z-50 w-full transition-all duration-500 ${
+              isScrolled ? "-bottom-6 px-8 opacity-100" : "-bottom-3 opacity-0"
             }`}
           >
             <ScrollProgress />
