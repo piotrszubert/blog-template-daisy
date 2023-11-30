@@ -39,57 +39,58 @@ export const Navbar = () => {
         isScrolled ? "px-8" : "px-0"
       }`}
     >
-      <div
-        className={`my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 backdrop-blur-md transition-all duration-500 
+      <div className="relative">
+        <div
+          className={`my-3 rounded-[var(--rounded-box)] border-2 border-primary bg-transparent px-5 backdrop-blur-md transition-all duration-500 
         ${isScrolled ? "shadow-md" : "shadow-lg"}`}
-      >
-        <div className="navbar">
-          <Link href="/" className="text-lg font-bold text-primary">
-            {siteConfig.site.name}
-          </Link>
-          <div className="ms-auto">
-            <button
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-              className="btn btn-square btn-ghost hover:text-primary"
-            >
-              {isOpen ? <X /> : <MoreHorizontal />}
-            </button>
+        >
+          <div className="navbar">
+            <Link href="/" className="text-lg font-bold text-primary">
+              {siteConfig.site.name}
+            </Link>
+            <div className="ms-auto">
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen)
+                }}
+                className="btn btn-square btn-ghost hover:text-primary"
+              >
+                {isOpen ? <X /> : <MoreHorizontal />}
+              </button>
+            </div>
           </div>
+          {isOpen && (
+            <div className="pb-6 text-center font-semibold">
+              <nav>
+                <ul className="space-y-3">
+                  {links.map((link, index) => (
+                    <li key={index} className="hover:underline">
+                      <Link
+                        className={pathname === link.path ? "text-primary" : ""}
+                        onClick={() => {
+                          setIsOpen(!isOpen)
+                        }}
+                        href={link.path}
+                      >
+                        {link.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          )}
         </div>
-        {isOpen && (
-          <div className="pb-6 text-center font-semibold">
-            <nav>
-              <ul className="space-y-3">
-                {links.map((link, index) => (
-                  <li key={index} className="hover:underline">
-                    <Link
-                      className={pathname === link.path ? "text-primary" : ""}
-                      onClick={() => {
-                        setIsOpen(!isOpen)
-                      }}
-                      href={link.path}
-                    >
-                      {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+        {siteConfig.content.progressBar.display && (
+          <div
+            className={`absolute z-50 w-full transition-all duration-500 ${
+              isScrolled ? "-bottom-6 px-8 opacity-100" : "-bottom-3 opacity-0"
+            }`}
+          >
+            <ScrollProgress />
           </div>
         )}
-        {/* {isScrolled && <div className="transition-all duration-500 "><ScrollProgress /></div>} */}
       </div>
-      { siteConfig.content.progressBar.display && (
-        <div
-          className={`transition-all duration-500 ${
-            isScrolled ? "-mt-3 opacity-100" : "-mt-6 opacity-0"
-          }`}
-        >
-          <ScrollProgress />
-        </div>
-      )}
     </div>
   )
 }
