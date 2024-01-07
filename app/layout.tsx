@@ -7,8 +7,25 @@ import { siteConfig } from "@/config/site"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: siteConfig.site.name,
+  title: {
+    default: siteConfig.site.name,
+    template: `%s | ${siteConfig.site.name}`,
+  },
   description: siteConfig.site.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "ps777",
+      url: "https://github.com/piotrszubert",
+    },
+  ],
+  creator: "ps777",
 }
 
 export default function RootLayout({
