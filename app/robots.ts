@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
- 
+import { siteConfig } from '@/config/site'
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ['/', '/api/og/*'],
     //   disallow: '/private/',
     },
-    // sitemap: 'https://acme.com/sitemap.xml',
+    sitemap: `${siteConfig.site.url}/sitemap.xml`,
   }
 }
