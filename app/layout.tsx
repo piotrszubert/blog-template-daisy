@@ -7,8 +7,46 @@ import { siteConfig } from "@/config/site"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title: siteConfig.site.name,
+  title: {
+    default: siteConfig.site.name,
+    template: `%s | ${siteConfig.site.name}`,
+  },
   description: siteConfig.site.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "ps777",
+      url: "https://github.com/piotrszubert",
+    },
+  ],
+  creator: "ps777",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.site.url,
+    title: siteConfig.site.name,
+    description: siteConfig.site.description,
+    siteName: siteConfig.site.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.site.name,
+    description: siteConfig.site.description,
+    images: [`${siteConfig.site.url}/api/og.jpg`],
+    creator: "@ps777",
+  },
+  // icons: {
+  //   icon: "/favicon.ico",
+  //   shortcut: "/favicon-16x16.png",
+  //   apple: "/apple-touch-icon.png",
+  // },
+  // manifest: `${siteConfig.site.url}/site.webmanifest`,
 }
 
 export default function RootLayout({

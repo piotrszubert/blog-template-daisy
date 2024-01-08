@@ -5,8 +5,8 @@ export const siteConfig: SiteConfig = {
     name: "Yu",
     description:
       "An open source blog application built using the new router, server components",
-    url: "https://",
-    // ogImage: "https://",
+    url: "https://yu-blog-eight.vercel.app",
+    ogImage: "https://yu-blog-eight.vercel.app/api/og",
   },
   content: {
     progressBar: {
