@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     url: siteConfig.site.url,
     title: siteConfig.site.name,
     description: siteConfig.site.description,
+    images: [`${siteConfig.site.url}/api/og`],
     siteName: siteConfig.site.name,
   },
   twitter: {

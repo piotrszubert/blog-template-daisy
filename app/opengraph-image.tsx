@@ -28,7 +28,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        About Yu
       </div>
     ),
     // ImageResponse options
