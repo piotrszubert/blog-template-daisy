@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.site.name,
     description: siteConfig.site.description,
-    images: [`${siteConfig.site.url}/api/og.png`],
+    images: [`${siteConfig.site.url}/api/og`],
     creator: "@ps777",
   },
   // icons: {
